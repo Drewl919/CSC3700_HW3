@@ -1,0 +1,57 @@
+head
+    title  My App
+    link(href='/css/bootstrap.css' rel='stylesheet')
+    script(src='/js/bootstrap.js' type='application/javascript')
+// Navigation
+style.
+    li {
+        background-color: #F8CBAD;
+    }
+    a {
+        color: #000000;
+    }
+nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color:#5B9BD5;')
+    .container
+        a.navbar-brand(href='#')
+            img(src='imgs/logo.png' alt='My Logo' height='70')
+        h2.text-light Happy Harry's Hardware
+        button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
+            span.navbar-toggler-icon
+        #navbarSupportedContent.collapse.navbar-collapse
+            ul.navbar-nav.ms-auto
+                if from == 'customers'
+                    li.nav-item.mx-1
+                        a.nav-link(href='/home' style='color:black;') Home
+                    li.nav-item.mx-1
+                        a.nav-link.active(aria-current='page' href='/customers' style='color:black; font-weight: 900;') Customers
+                    li.nav-item.mx-1
+                        a.nav-link(href='/products' style='color:black;') Products
+                    li.nav-item.mx-1
+                        a.nav-link(href='/sales' style='color:black;') Sales
+                else if from == 'products'
+                    li.nav-item.mx-1
+                        a.nav-link(href='/home' style='color:black;') Home
+                    li.nav-item.mx-1
+                        a.nav-link(href='/customers' style='color:black;') Customer
+                    li.nav-item.mx-1
+                        a.nav-link.active(aria-current='page' href='/products' style='color:black; font-weight: 900;') Products
+                    li.nav-item.mx-1
+                        a.nav-link(href='/sales' style='color:black;') Sales
+                else if from == 'sales'
+                    li.nav-item.mx-1
+                        a.nav-link(href='/home' style='color:black;') Home
+                    li.nav-item.mx-1
+                        a.nav-link(href='/customers' style='color:black;') Customer
+                    li.nav-item.mx-1
+                        a.nav-link(href='/products' style='color:black;') Products
+                    li.nav-item.mx-1
+                        a.nav-link.active(aria-current='page' href='/sales' style='color:black; font-weight: 900;') Sales
+                else
+                    li.nav-item.mx-1
+                        a.nav-link.active(aria-current='page' href='/home' style='color:black; font-weight: 900;') Home
+                    li.nav-item.mx-1
+                        a.nav-link(href='/Customer' style='color:black;') Customer
+                    li.nav-item.mx-1
+                        a.nav-link(href='/products' style='color:black;') Products
+                    li.nav-item.mx-1
+                        a.nav-link(href='/sales' style='color:black;') Sales
