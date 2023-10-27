@@ -1,0 +1,28 @@
+include layouts/layout
+
+style.
+    li {
+        background-color: #FFC000;
+    }
+
+body(style='background-color: #FFC000')
+    .container
+        .row.pt-5
+            .col-sm
+                b Top Customers
+                ol
+                    - for(var i = 0; i<5; ++i) {
+                        li= "test"+i
+                    - }
+            .col-sm
+                b Top Products
+                ol
+                    - for(var i = 0; i<5; ++i) {
+                        li= "test" + i
+                    - }
+            .col-sm
+                b Sales
+                ol
+                    - for(var i = 0; i<5; ++i) {
+                        li= "test" + i
+                    - }

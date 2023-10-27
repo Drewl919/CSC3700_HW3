@@ -1,11 +1,14 @@
-const adminData = require("../routes/admin");
-const Product = require("../models/currentMonthSales");
-exports.getAddProduct = ( req, res, next) => {
-    res.render( 'admin/addProduct',
-        {
-            from: 'addProduct'
-        })
+const adminData = require("../routes/sales");
+const MonthSales = require("../models/currentMonthSales");
+const CustomerSales = require("../models/customerSales");
+const ItemSales = require("../models/itemSales");
+
+exports.showHome = ( req, res, next) => {
+    res.render( 'home', {
+        from: 'home'
+    })
 }
+
 exports.postAddProduct = ( req, res, next) => {
     let t = req.body.title;
     let a = req.body.author;
