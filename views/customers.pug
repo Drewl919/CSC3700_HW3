@@ -5,7 +5,7 @@ include layouts/layout
     if customers.length == 0
         h2 Sorry, there are currently no customers to display.
     else
-        table.table.table-striped.m-auto(style='width: 50%;')
+        table.table.table-striped.m-auto(style='width: 60%;')
             thead
                 tr
                     th(scope='col', style='color: #FFFFFF;').bg-black Name
@@ -22,5 +22,5 @@ include layouts/layout
                         else
                             td= "$0.00"
                         td
-                            form(method='get' action='/customers/' + i.CustomerID)
+                            form(method='get' action='/editCustomer/' + i.CustomerID)
                                 button( type='submit' class='btn btn-secondary') update

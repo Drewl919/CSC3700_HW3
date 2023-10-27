@@ -1,0 +1,21 @@
+include ../layouts/layout
+
+.container
+    h1.mt-3
+    div.mt-3
+        h1 Update customer information
+        if ( customer == null )
+            h2 Sorry customer is null
+    div.mt-2
+        form(action='/postUpdateCustomer' method='post')
+            .form-group
+                input.form-control(type='hidden' name='id' value= customer.id )
+            .form-group
+                label(for='name') Name
+                input.form-control(type='text' aria-describedby='emailHelp' id='name' name='name' value= customer.CustomerName )
+            .form-group
+                label(for='email') Email
+                input.form-control(type='text' aria-describedby='emailHelp' id='email' name='email' value= customer.CustomerEmail )
+
+            br
+            button.btn.btn-primary(type='submit') Update

@@ -7,6 +7,7 @@ router.get( '/home', salesController.showHome );
 router.get( '/customers', salesController.showCustomers );
 router.get( '/products', salesController.showProducts );
 router.get( '/sales', salesController.showSales );
+router.get( '/editCustomer/:id', salesController.editCustomer);
 // router.post( '/product', salesController.getProducts);
 // router.get( '/sales', salesController.getSales);
 // router.get( '/customer', salesController.getCustomers);

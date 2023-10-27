@@ -4,10 +4,10 @@ include layouts/layout
     if sales.length == 0
         h2 Sorry, there are currently no sales to display.
     else
-        table.table.table-striped.m-auto(style='width: 50%;')
+        table.table.table-striped.m-auto(style='width: 60%;')
             thead
                 tr
-                    th(scope='col', style='color: #FFFFFF;').bg-black Date
+                    th(scope='col', style='color: #FFFFFF; width: 150;').bg-black Date
                     th(scope='col', style='color: #FFFFFF;').bg-black Customer
                     th(scope='col', style='color: #FFFFFF;').bg-black Product
                     th(scope='col', style='color: #FFFFFF;').bg-black Quantity
