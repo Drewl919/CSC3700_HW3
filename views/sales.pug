@@ -1,0 +1,25 @@
+include layouts/layout
+
+.container.p-4
+    if sales.length == 0
+        h2 Sorry, there are currently no sales to display.
+    else
+        table.table.table-striped.m-auto(style='width: 50%;')
+            thead
+                tr
+                    th(scope='col', style='color: #FFFFFF;').bg-black Date
+                    th(scope='col', style='color: #FFFFFF;').bg-black Customer
+                    th(scope='col', style='color: #FFFFFF;').bg-black Product
+                    th(scope='col', style='color: #FFFFFF;').bg-black Quantity
+                    th(scope='col', style='color: #FFFFFF;').bg-black Total Sales
+            tbody
+                each i in sales
+                    tr
+                        td= i.Date
+                        td= i.CustomerName
+                        td= i.ItemName
+                        td= i.Quantity
+                        if i.TotalSales > 0
+                            td= "$" + i.TotalSales
+                        else
+                            td= "$0.00"

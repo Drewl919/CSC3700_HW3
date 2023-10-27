@@ -7,7 +7,7 @@ module.exports = class Product {
         )
     }
     static fetchAll() {
-        return db.execute("SELECT c.CustomerName, c.CustomerEmail ,SUM(i.ItemPrice * s.Quantity) AS TotalSales " +
+        return db.execute("SELECT c.CustomerID, c.CustomerName, c.CustomerEmail ,SUM(i.ItemPrice * s.Quantity) AS TotalSales " +
             "FROM Customer c " +
             "LEFT JOIN Sales s ON c.CustomerID = s.CustomerID " +
             "LEFT JOIN Item i ON s.ItemID = i.ItemID " +

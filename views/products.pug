@@ -1,0 +1,19 @@
+include layouts/layout
+
+.container.p-4
+    if products.length == 0
+        h2 Sorry, there are currently no products to display.
+    else
+        table.table.table-striped.m-auto(style='width: 50%;')
+            thead
+                tr
+                    th(scope='col', style='color: #FFFFFF;').bg-black Product
+                    th(scope='col', style='color: #FFFFFF;').bg-black Total Sales
+            tbody
+                each i in products
+                    tr
+                        td= i.ItemName
+                        if i.TotalSales > 0
+                            td= "$" + i.TotalSales
+                        else
+                            td= "$0.00"
