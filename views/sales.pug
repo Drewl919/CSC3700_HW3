@@ -19,7 +19,4 @@ include layouts/layout
                         td= i.CustomerName
                         td= i.ItemName
                         td= i.Quantity
-                        if i.TotalSales > 0
-                            td= "$" + i.TotalSales
-                        else
-                            td= "$0.00"
+                        td= i.TotalSales

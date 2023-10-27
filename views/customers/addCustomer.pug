@@ -1,0 +1,15 @@
+include ../layouts/layout
+.container
+    h1.mt-3
+    div.mt-3
+        h1 Add New Customer
+    div.mt-2
+        form(action='/customer' method='post')
+            .form-group
+                label(for='customerName') Name
+                input.form-control(type='text' aria-describedby='emailHelp' id='customerName' name='name')
+            .form-group
+                label(for='customerName') Email
+                input.form-control(type='email' aria-describedby='emailHelp' id='customerEmail' name='email')
+            br
+            button.btn.btn-primary(type='submit') Submit

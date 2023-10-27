@@ -13,7 +13,10 @@ style.
 nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color:#5B9BD5;')
     .container
         a.navbar-brand(href='#')
-            img(src='imgs/logo.png' alt='My Logo' height='70')
+            if subLevel
+                img(src='../imgs/logo.png' alt='My Logo' height='70')
+            else
+                img(src='imgs/logo.png' alt='My Logo' height='70')
         h2.text-light Happy Harry's Hardware
         button.navbar-toggler(type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation')
             span.navbar-toggler-icon
@@ -25,16 +28,16 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color:#5B9B
                     li.nav-item.mx-1
                         a.nav-link.active(aria-current='page' href='/customers' style='color:black; font-weight: 900;') Customers
                     li.nav-item.mx-1
-                        a.nav-link(href='/products' style='color:black;') Products
+                        a.nav-link(href='/items' style='color:black;') Products
                     li.nav-item.mx-1
                         a.nav-link(href='/sales' style='color:black;') Sales
-                else if from == 'products'
+                else if from == 'items'
                     li.nav-item.mx-1
                         a.nav-link(href='/home' style='color:black;') Home
                     li.nav-item.mx-1
                         a.nav-link(href='/customers' style='color:black;') Customer
                     li.nav-item.mx-1
-                        a.nav-link.active(aria-current='page' href='/products' style='color:black; font-weight: 900;') Products
+                        a.nav-link.active(aria-current='page' href='/items' style='color:black; font-weight: 900;') Products
                     li.nav-item.mx-1
                         a.nav-link(href='/sales' style='color:black;') Sales
                 else if from == 'sales'
@@ -43,7 +46,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color:#5B9B
                     li.nav-item.mx-1
                         a.nav-link(href='/customers' style='color:black;') Customer
                     li.nav-item.mx-1
-                        a.nav-link(href='/products' style='color:black;') Products
+                        a.nav-link(href='/items' style='color:black;') Products
                     li.nav-item.mx-1
                         a.nav-link.active(aria-current='page' href='/sales' style='color:black; font-weight: 900;') Sales
                 else
@@ -52,7 +55,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color:#5B9B
                     li.nav-item.mx-1
                         a.nav-link(href='/customers' style='color:black;') Customer
                     li.nav-item.mx-1
-                        a.nav-link(href='/products' style='color:black;') Products
+                        a.nav-link(href='/items' style='color:black;') Products
                     li.nav-item.mx-1
                         a.nav-link(href='/sales' style='color:black;') Sales
 

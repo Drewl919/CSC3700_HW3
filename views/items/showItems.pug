@@ -1,0 +1,20 @@
+include ../layouts/layout
+
+.container.p-4
+    if products.length == 0
+        h2 Sorry, there are currently no products to display.
+    else
+        .container.m-auto(style='width: 60%;')
+            table.table.table-striped
+                thead
+                    tr
+                        th(scope='col', style='color: #FFFFFF;').bg-black Product
+                        th(scope='col', style='color: #FFFFFF;').bg-black Total Sales
+                tbody
+                    each i in products
+                        tr
+                            td= i.ItemName
+                            td= i.TotalSales
+            br
+            form(method='get' action='/addItem')
+                button( type='submit' class='btn btn-secondary') Insert New Item

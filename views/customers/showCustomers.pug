@@ -1,0 +1,27 @@
+include ../layouts/layout
+
+.container.p-4
+
+    if customers.length == 0
+        h2 Sorry, there are currently no customers to display.
+    else
+        .container.m-auto(style='width: 60%;')
+            table.table.table-striped
+                thead
+                    tr
+                        th(scope='col', style='color: #FFFFFF;').bg-black Name
+                        th(scope='col', style='color: #FFFFFF;').bg-black Email
+                        th(scope='col', style='color: #FFFFFF;').bg-black Total Sales
+                        th(scope='col', style='color: #FFFFFF;').bg-black
+                tbody
+                    each i in customers
+                        tr
+                            td= i.CustomerName
+                            td= i.CustomerEmail
+                            td= i.TotalSales
+                            td
+                                form(method='get' action='/editCustomer/' + i.CustomerID)
+                                    button( type='submit' class='btn btn-secondary') update
+            br
+            form(method='get' action='/addCustomer')
+                button( type='submit' class='btn btn-secondary') Insert New Customer

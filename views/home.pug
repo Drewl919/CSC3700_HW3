@@ -7,20 +7,20 @@ include layouts/layout
             b Top Customers
             ol
                 each c in customers
-                    li= `${c.CustomerName} - $${c.TotalSales}`
+                    li= `${c.CustomerName} - ${c.TotalSales}`
             form(method='get' action='/customers')
                 button( type='submit' class='btn btn-primary') Show All
         .col-sm
             b Top Products
             ol
                 each i in products
-                    li= `${i.ItemName} - $${i.TotalSales}`
+                    li= `${i.ItemName} - ${i.TotalSales}`
             form(method='get' action='/products')
                 button( type='submit' class='btn btn-primary') Show All
         .col-sm
             b Sales
             ol
                 each s in sales
-                    li= `${s.Date} - $${s.TotalSales}`
+                    li= `${s.Date} - ${s.TotalSales}`
             form(method='get' action='/sales')
                 button( type='submit' class='btn btn-primary') Show All
