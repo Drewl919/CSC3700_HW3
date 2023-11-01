@@ -1,7 +1,7 @@
 include layouts/layout
 
 
-.container
+.container(style="font-size:20px")
     .row.pt-5
         .col-sm
             b Top Customers
@@ -9,18 +9,18 @@ include layouts/layout
                 each c in customers
                     li= `${c.CustomerName} - ${c.TotalSales}`
             form(method='get' action='/customers')
-                button( type='submit' class='btn btn-primary') Show All
+                button( type='submit' class='btn btn-secondary') Show All
         .col-sm
             b Top Products
             ol
                 each i in products
                     li= `${i.ItemName} - ${i.TotalSales}`
-            form(method='get' action='/products')
-                button( type='submit' class='btn btn-primary') Show All
+            form(method='get' action='/items')
+                button( type='submit' class='btn btn-secondary') Show All
         .col-sm
             b Sales
             ol
                 each s in sales
                     li= `${s.Date} - ${s.TotalSales}`
             form(method='get' action='/sales')
-                button( type='submit' class='btn btn-primary') Show All
+                button( type='submit' class='btn btn-secondary') Show All

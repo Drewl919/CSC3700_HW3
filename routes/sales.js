@@ -13,5 +13,7 @@ router.post( '/item', salesController.postAddItem);
 router.get( '/sales', salesController.showSales );
 router.get( '/editCustomer/:id', salesController.editCustomer);
 router.post( '/postUpdateCustomer', salesController.postUpdateCustomer);
+router.get( '/', salesController.showHome);
+
 
 exports.routes = router;
