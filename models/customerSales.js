@@ -14,12 +14,12 @@ module.exports = class CustomerSales {
             [id] );
     }
     static fetchAll() {
-        return db.execute("SELECT c.CustomerID, c.CustomerName, c.CustomerEmail, CONCAT('$',FORMAT((i.ItemPrice * s.Quantity), 2, 'en_US')) AS TotalSales " +
+        return db.execute("SELECT c.CustomerName, c.CustomerEmail, CONCAT('$', FORMAT(SUM(i.ItemPrice * s.Quantity), 2)) AS TotalSales " +
             "FROM Customer c " +
             "LEFT JOIN Sales s ON c.CustomerID = s.CustomerID " +
             "LEFT JOIN Item i ON s.ItemID = i.ItemID " +
             "GROUP BY c.CustomerName " +
-            "ORDER BY (s.Quantity * i.ItemPrice) DESC");
+            "ORDER BY SUM(i.ItemPrice * s.Quantity) DESC ");
     }
 
     update ( id ){

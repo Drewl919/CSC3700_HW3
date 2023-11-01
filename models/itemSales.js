@@ -14,9 +14,9 @@ module.exports = class ItemSales {
             [id] );
     }
     static fetchAll() {
-        return db.execute("SELECT i.ItemName, CONCAT('$',FORMAT((i.ItemPrice * s.Quantity), 2, 'en_US')) AS TotalSales " +
+        return db.execute("SELECT i.ItemName, CONCAT('$', FORMAT(SUM(i.ItemPrice * s.Quantity), 2)) AS TotalSales " +
             "FROM Item i LEFT JOIN Sales s ON i.ItemID = s.ItemID " +
             "GROUP BY i.ItemName " +
-            "ORDER BY (s.Quantity * i.ItemPrice) DESC");
+            "ORDER BY SUM(i.ItemPrice * s.Quantity) DESC");
     }
 }
