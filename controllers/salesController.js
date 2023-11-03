@@ -57,8 +57,8 @@ exports.postAddItem = ( req, res, next) => {
     let name = req.body.name;
     let price = req.body.price;
     const items = new ItemSales(name, price);
-    items.save();
-    res.redirect("/items");
+    items.save()
+        .then(res.redirect("/items"));
 }
 exports.getAddCustomer = ( req, res, next) => {
     res.render( 'customers/addCustomer',
@@ -71,8 +71,8 @@ exports.postAddCustomer = ( req, res, next) => {
     let name = req.body.name;
     let email = req.body.email;
     const customer = new CustomerSales(name, email);
-    customer.save();
-    res.redirect("/customers");
+    customer.save()
+        .then(res.redirect("/customers"));
 }
 
 exports.editCustomer = ( req, res, next ) => {
@@ -83,7 +83,6 @@ exports.editCustomer = ( req, res, next ) => {
                 from: 'customers',
                 subLevel: true,
                 title : `Update`,
-                id : rows[0].id,
                 customer: rows[0][0]
             })
         }).catch( err => {
@@ -96,7 +95,6 @@ exports.postUpdateCustomer = ( req, res, next ) => {
     let id = req.body.customerId;
     let name = req.body.name;
     let email = req.body.email;
-
 
     const customer = new CustomerSales( name, email );
     customer.update(id)

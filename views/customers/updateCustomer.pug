@@ -11,10 +11,11 @@ include ../layouts/layout
             .form-group
                 input.form-control(type='hidden' name='customerId' value= customer.CustomerID )
             .form-group
-                label(for='customerName') Name
+                label(for='customerName' style='color:black; font-weight: 700;') Name
                 input.form-control(type='text' aria-describedby='emailHelp' id='customerName' name='name' value= customer.CustomerName )
+            br
             .form-group
-                label(for='customerEmail') Email
+                label(for='customerEmail' style='color:black; font-weight: 700;') Email
                 input.form-control(type='text' aria-describedby='emailHelp' id='customerEmail' name='email' value= customer.CustomerEmail )
 
             br

@@ -6,10 +6,11 @@ include ../layouts/layout
     div.mt-2
         form(action='/customer' method='post')
             .form-group
-                label(for='customerName') Name
+                label(for='customerName' style='color:black; font-weight: 700;') Name
                 input.form-control(type='text' aria-describedby='emailHelp' id='customerName' name='name')
+            br
             .form-group
-                label(for='customerName') Email
+                label(for='customerName' style='color:black; font-weight: 700;') Email
                 input.form-control(type='email' aria-describedby='emailHelp' id='customerEmail' name='email')
             br
             button.btn.btn-primary(type='submit') Submit

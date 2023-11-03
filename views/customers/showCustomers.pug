@@ -14,13 +14,13 @@ include ../layouts/layout
                         th(scope='col', style='color: #FFFFFF;').bg-black Total Sales
                         th(scope='col', style='color: #FFFFFF;').bg-black
                 tbody.align-middle
-                    each i in customers
+                    each c in customers
                         tr
-                            td= i.CustomerName
-                            td= i.CustomerEmail
-                            td= i.TotalSales
+                            td= c.CustomerName
+                            td= c.CustomerEmail
+                            td= c.TotalSales
                             td
-                                form(method='get' action='/editCustomer/' + i.CustomerID)
+                                form(method='get' action='/editCustomer/' + c.CustomerID)
                                     button( type='submit' class='btn btn-secondary') update
             br
             form(method='get' action='/addCustomer')
